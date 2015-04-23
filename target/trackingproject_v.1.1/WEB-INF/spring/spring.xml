@@ -8,7 +8,7 @@
     <!-- Basic Configurations -->
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.tma.gbst.controller"/>
+    <context:component-scan base-package="com.tma.gbst.model"/>
     <context:component-scan base-package="com.tma.gbst.repository"/>
     <context:component-scan base-package="com.tma.gbst.service"/>
     <context:component-scan base-package="com.tma.gbst.controller"/>

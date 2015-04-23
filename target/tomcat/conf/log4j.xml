@@ -18,7 +18,7 @@
 		<level value="INFO" />
 	</logger>
 
-	<logger name="uaicontacts.controller">
+	<logger name="com.tma.gbst.controller">
 		<level value="INFO" />
 	</logger>
 

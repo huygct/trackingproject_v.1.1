@@ -1,0 +1,17 @@
+<section>
+    <ul class="nav nav-pills">
+        <li ng-class="{ active:tab.isSet(1) }">
+            <a href ng-click="tab.setTab(1)">Add User</a>
+        </li>
+        <li ng-class="{ active:tab.isSet(2) }">
+            <a href ng-click="tab.setTab(2)">User List</a>
+        </li>
+    </ul>
+
+    <!--  Description Tab's Content  -->
+    <user-add ng-show="true" ></user-add>
+
+    <!--  Spec Tab's Content  -->
+    <div user-list ng-show="tab.isSet(2)"></div>
+
+</section>

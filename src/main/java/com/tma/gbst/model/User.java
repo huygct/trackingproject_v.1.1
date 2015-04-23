@@ -3,7 +3,7 @@ package com.tma.gbst.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "system_user")
+@Table(name = "user")
 public class User {
 
     @Id
@@ -18,6 +18,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_role")
     private Role role;
+
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    private UserProfile userProfile;
 
     public int getId() {
         return id;
@@ -65,5 +68,13 @@ public class User {
 
     public void setEnabled(String enabled) {
         this.enabled = enabled;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 }

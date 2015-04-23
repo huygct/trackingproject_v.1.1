@@ -21,8 +21,8 @@
         <security:authentication-provider>
             <security:jdbc-user-service
                     data-source-ref="myContactDataSource"
-                    users-by-username-query="select email, password, enabled from system_user where email = ?"
-                    authorities-by-username-query="select u.email as login, u.user_role as role from system_user u where u.email = ?" />
+                    users-by-username-query="select email, password, enabled from user where email = ?"
+                    authorities-by-username-query="select u.email as login, u.user_role as role from user u where u.email = ?" />
         </security:authentication-provider>
     </security:authentication-manager>
 </beans>
