@@ -1,13 +1,15 @@
 package com.tma.gbst.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
 public class User {
-
     @Id
     @GeneratedValue
+    @Column(unique = true, nullable = false)
     private int id;
 
     private String email;
@@ -21,6 +23,36 @@ public class User {
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private UserProfile userProfile;
+    @ManyToMany(mappedBy = "users")
+    private Set<Course> courses = new HashSet<Course>();
+    @ManyToMany(mappedBy = "users")
+    private Set<Team> teams = new HashSet<Team>();
+    @OneToMany(mappedBy = "user")
+    private Set<Report> reports = new HashSet<Report>();
+
+    public Set<Report> getReports() {
+        return reports;
+    }
+
+    public void setReports(Set<Report> reports) {
+        this.reports = reports;
+    }
+
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 
     public int getId() {
         return id;
