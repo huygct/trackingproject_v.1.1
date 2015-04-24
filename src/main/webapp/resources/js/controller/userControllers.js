@@ -7,14 +7,10 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     $scope.newUser = {};
 
     // Use $http service to load the data
-    $http.get('userList').success(function (userList) {
+    $http.get('userList').success(function(userList){
         $scope.users = userList;
         _setIndexes();
     });
-/*    $http.get('data/users.json').success(function(data) {
-        $scope.users = data;
-        _setIndexes();
-    });*/
 
     $scope.addUser = function() {
 
@@ -23,14 +19,21 @@ userController.controller('userController', ['$scope', '$http', function($scope,
         var newUser = $scope.newUser;
         newUser.state = "normal";
         newUser.index = $scope.users.length;
-        $scope.users.push(newUser);
+
+        $http.post('addUser', newUser)
+            .success(function(data, status, headers, config) {
+                $scope.users.push(newUser);
+        })
         $scope.newUser = {};
     };
 
     $scope.deleteUser = function(user) {
         if (user.state == "deleted") {
-            $scope.users.splice(user.index, 1);
-            _setIndexes();
+            $http.delete('deleteUser/' + user.id)
+                .success(function () {
+                    $scope.users.splice(user.index, 1);
+                    _setIndexes();
+                })
         } else {
             user.state = "deleted";
         }
@@ -41,9 +44,8 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     };
 
     $scope.editUser = function(user) {
-        user.oldName = user.name;
-        user.oldAddress = user.address;
-        user.oldPhoneNumber = user.phone_number;
+        user.name = user.name;
+        user.email = user.email;
         user.state = "edit";
     };
 
@@ -53,9 +55,8 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     };
 
     $scope.cancelEdit = function(user) {
-        user.name = user.oldName;
-        user.address = user.oldAddress;
-        user.phone_number = user.oldPhoneNumber;
+        user.name = user.name;
+        user.address = user.email;
         user.state = "normal";
     };
 
@@ -63,10 +64,11 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     function _setIndexes() {
         $scope.users.forEach(function(user, index) {
             user.index = index;
-            console.log(index);
+//            console.log(index);
         });
     }
 
+/*
     //
     $scope.users = [];
     $scope.fetchUserList = function () {
@@ -92,5 +94,6 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     };
 
     $scope.fetchUserList();
+*/
 
 }]);

@@ -5,7 +5,7 @@ function userController($scope, $http) {
     //
     $scope.users = [];
     $scope.fetchUserList = function() {
-        $http.get('userList').success(function(userList){
+        $http.get('home/userList').success(function(userList){
             $scope.users = userList;
 //                            console.log(userList);
         });

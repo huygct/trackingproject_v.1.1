@@ -16,8 +16,7 @@
     <table class="table table-bordered">
         <thead>
         <th>Name</th>
-        <th>Address</th>
-        <th>Phone Number</th>
+        <th>Email</th>
         <th></th>
         <th ng-if="users.length > 0"></th>
         </thead>
@@ -31,10 +30,7 @@
                 <input type="text" class="form-control" ng-model="user.name" />
             </td>
             <td>
-                <input type="text" class="form-control" ng-model="user.address" />
-            </td>
-            <td>
-                <input type="text" class="form-control" ng-model="user.phone_number" />
+                <input type="text" class="form-control" ng-model="user.email" />
             </td>
             <td>
                 <input type="button" class="btn btn-success" ng-click="saveUser(user);" value="Save" />
@@ -47,8 +43,7 @@
         <!-- Deleted Mode Template -->
         <tr class="danger" ng-switch-when="deleted">
             <td>{{user.name}}</td>
-            <td>{{user.address}}</td>
-            <td>{{user.phone_number}}</td>
+            <td>{{user.email}}</td>
             <td>
                 <input type="button" class="btn btn-danger" ng-click="deleteUser(user);" value="Delete Permanently" />
             </td>
@@ -60,8 +55,7 @@
         <!-- Normal Mode Template -->
         <tr ng-switch-default>
             <td>{{user.name}} </td>
-            <td>{{user.address}}</td>
-            <td>{{user.phone_number}}</td>
+            <td>{{user.email}}</td>
             <td>
                 <input type="button" class="btn btn-primary" ng-click="editUser(user);" value="Edit" />
             </td>
@@ -78,10 +72,7 @@
                 <input type="text" class="form-control" ng-model="newUser.name" />
             </td>
             <td>
-                <input type="text" class="form-control" ng-model="newUser.address" />
-            </td>
-            <td>
-                <input type="text" class="form-control" ng-model="newUser.phone_number" />
+                <input type="text" class="form-control" ng-model="newUser.email" />
             </td>
             <td>
                 <input type="button" class="btn btn-primary" ng-click="addUser();" value="Add"/>
