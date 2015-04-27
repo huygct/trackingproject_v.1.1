@@ -21,7 +21,7 @@ public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView welcome() {
-        return new ModelAndView("welcomePage");
+        return new ModelAndView("home");
     }
 
     @RequestMapping(value = "/userList", method = RequestMethod.GET)

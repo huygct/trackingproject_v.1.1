@@ -63,16 +63,8 @@ public class UserController {
         return "redirect:/protected/user";
     }
 
-    @RequestMapping("/deleteUser/{userId}")
-    public String deleteUser(@PathVariable("userId") int userId) {
-        System.out.println(userId);
-/*        try {
-            System.out.println(deleteUser);
-            JSONObject userJSON = new JSONObject(deleteUser);
-            userService.delete(userJSON.getInt("id"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
-        return "redirect:/protected/user";
+    @RequestMapping(value = "/deleteUser/{userId}", method=RequestMethod.DELETE)
+    public @ResponseBody void deleteUser(@PathVariable("userId") Integer userId) {
+        userService.delete(userId);
     }
 }

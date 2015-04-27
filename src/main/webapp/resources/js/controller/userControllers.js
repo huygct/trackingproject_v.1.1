@@ -29,11 +29,11 @@ userController.controller('userController', ['$scope', '$http', function($scope,
 
     $scope.deleteUser = function(user) {
         if (user.state == "deleted") {
-            $http.delete('deleteUser/' + user.id)
-                .success(function () {
+            $http.delete ('deleteUser/' + user.id)
+                .success(function (response) {
                     $scope.users.splice(user.index, 1);
                     _setIndexes();
-                })
+            })
         } else {
             user.state = "deleted";
         }

@@ -8,3 +8,4 @@ var trackingApp = angular.module('trackingApp', [
 
 var userDirective = angular.module('appDirectives', []);
 var userController = angular.module('appControllers', []);
+var homeController = angular.mudule('appControllers', []);
