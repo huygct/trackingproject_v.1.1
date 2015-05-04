@@ -71,7 +71,7 @@
         <!-- New User Form -->
         <tbody>
         <tr>
-            <input type="hidden" ng-model="user.id" />
+            <input type="hidden" ng-model="newUser.id" />
             <td>
                 <input type="text" class="form-control" ng-model="newUser.name" />
             </td>

@@ -34,6 +34,12 @@ function homeController($scope, $http) {
         })
     }
 
+    $scope.viewUserProfile = function () {
+        $http.get('userProfile').success(function(response){
+            $scope.userProfile = response;
+        })
+    }
+
     $scope.resetAddressBookField = function(){
         $scope.ab.firstName='';
         $scope.ab.lastName='';
@@ -44,7 +50,7 @@ function homeController($scope, $http) {
 
     $scope.addUserProfile = function(ab) {
         $http.post('addUserProfile', ab).success(function(response){
-            $scope.viewAllUserProfile();
+//            $scope.viewAllUserProfile();
 //            $scope.ab.firstName='';
 //            $scope.ab.lastName='';
 //            $scope.ab.phone = '';
@@ -77,15 +83,14 @@ function homeController($scope, $http) {
 
     $scope.deleteAllAddressBook = function(){
         $http.delete('address/delete/all').success(function(response){
-            $scope.viewAllAddressBook();
+//            $scope.viewAllAddressBook();
         })
     }
 
-    $scope.editAddressBook = function(pos, addressBook){
-        $scope.position = pos;
-        $scope.ab = addressBook;
+    $scope.editUserProfile = function(userProfile){
+        $scope.ab = userProfile;
         $scope.editMode = true;
     }
 
-    $scope.viewAllUserProfile();
+    $scope.viewUserProfile();
 }

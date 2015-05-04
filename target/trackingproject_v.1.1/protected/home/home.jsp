@@ -14,20 +14,18 @@
 
     <div class="demo-row">
 
-        <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="userProfiles.length == 0">
+        <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="userProfile == null">
             No user profile entry found
         </div>
-        <table class="table table-bordered table-striped" ng-show="userProfiles.length > 0">
-            <div ng-repeat="userProfile in userProfiles">
-                <tr>
-                    <th>Badge Id</th>
-                    <th>{{userProfile.badgeId}}</th>
-                </tr>
+        <table class="table table-bordered table-striped" ng-show="userProfile != null">
+            <tr>
+                <th>Badge Id</th>
+                <th>{{userProfile.badgeId}}</th>
+            </tr>
                 <%--<tr ng-repeat="addressBook in addressBooks | filter:searchAddressBook">--%>
                     <%--<td  style="width:70px;text-align:center;"><button class="btn btn-mini btn-danger" ng-click="deleteAddressBook(addressBooks.indexOf(addressBook))">Delete</button></td>--%>
-                    <button class="btn btn-mini btn-danger" ng-click="editAddressBook(userProfiles.indexOf(userProfile), userProfile)">Update</button>
+                    <button class="btn btn-mini btn-danger" ng-click="editUserProfile(userProfile)">Update</button>
                 <%--</tr>--%>
-            </div>
         </table>
 
         <div class="demo-title">
