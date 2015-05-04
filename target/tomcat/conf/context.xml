@@ -13,7 +13,7 @@
             minIdle="1"
             maxWait="5000"
             username="root"
-            password=""
+            password="123456"
             driverClassName="com.mysql.jdbc.Driver"
             validationQuery="SELECT 'OK'"
             testWhileIdle="true"

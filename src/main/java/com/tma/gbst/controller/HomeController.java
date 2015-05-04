@@ -15,8 +15,12 @@ public class HomeController {
         return "redirect:/protected/home";
     }
 
+
+
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT}, produces = "application/json")
     public ResponseEntity<?> doGetAjax() {
         return new ResponseEntity<Object>(HttpStatus.FORBIDDEN);
-    }    
+    }
+
+
 }

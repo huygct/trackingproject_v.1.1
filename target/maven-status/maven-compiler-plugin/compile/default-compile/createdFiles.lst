@@ -1,6 +1,7 @@
 com\tma\gbst\controller\IndexController.class
-com\tma\gbst\model\Course.class
+com\tma\gbst\service\UserProfileService.class
 com\tma\gbst\model\Role.class
+com\tma\gbst\model\Course.class
 com\tma\gbst\model\Project.class
 com\tma\gbst\model\UserProfile.class
 com\tma\gbst\model\Report.class
@@ -8,8 +9,9 @@ com\tma\gbst\repository\UserRepository.class
 com\tma\gbst\controller\LoginController.class
 com\tma\gbst\controller\UserController.class
 com\tma\gbst\model\User.class
-com\tma\gbst\controller\HomeController.class
 com\tma\gbst\interceptor\LoginInterceptor.class
+com\tma\gbst\controller\HomeController.class
 com\tma\gbst\model\Subject.class
+com\tma\gbst\repository\UserProfileRepository.class
 com\tma\gbst\model\Team.class
 com\tma\gbst\service\UserService.class

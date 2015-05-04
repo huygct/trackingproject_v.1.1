@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 @Table(name="user_profile")
 public class UserProfile {
     @Id
-    @GeneratedValue
     private int id;
 
     private int badgeId;
@@ -39,6 +38,34 @@ public class UserProfile {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USER", referencedColumnName = "id", insertable = false, updatable = false)
     private User user;
+
+//    public UserProfile() {
+//        this.id = 0;
+//        this.badgeId = 0;
+//        this.badgeIdMentor = 0;
+//        this.school = "";
+//        this.degree = "";
+//        java.util.Date date= new java.util.Date();
+//        this.graduateDate = new Timestamp(date.getTime());
+//        this.finalStudyResult = 0;
+//        this.toeic = 0;
+//        this.joinDate = new Timestamp(date.getTime());
+//        this.workRole = "";
+//        this.experienceYears = 0;
+//        this.experienceYearsInCurrentRole = 0;
+//        this.professionalCertification = false;
+//        this.overseaWorkingExperience = false;
+//        this.policeClearanceStatus = "";
+//        this.cvUrl = "";
+//        this.imageUser = "";
+//        this.place = "";
+//        this.gender = false;
+//        this.needTracking = true;
+//        this.skypeId = "";
+//        this.ipAddress = "";
+//        this.generalStatus = "";
+//        this.user = user;
+//    }
 
     public int getId() {
         return id;
