@@ -10,16 +10,17 @@ import java.sql.Timestamp;
 @Table(name="user_profile")
 public class UserProfile {
     @Id
+    @GeneratedValue
     private int id;
 
     private int badgeId;
     private int badgeIdMentor;
     private String school;
     private String degree;
-    private Timestamp graduateDate;
+    private String graduateDate;
     private double finalStudyResult;
     private int toeic;
-    private Timestamp joinDate;
+    private String joinDate;
     private String workRole;
     private double experienceYears;
     private double experienceYearsInCurrentRole;
@@ -107,11 +108,11 @@ public class UserProfile {
         this.degree = degree;
     }
 
-    public Timestamp getGraduateDate() {
+    public String getGraduateDate() {
         return graduateDate;
     }
 
-    public void setGraduateDate(Timestamp graduateDate) {
+    public void setGraduateDate(String graduateDate) {
         this.graduateDate = graduateDate;
     }
 
@@ -131,11 +132,11 @@ public class UserProfile {
         this.toeic = toeic;
     }
 
-    public Timestamp getJoinDate() {
+    public String getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(Timestamp joinDate) {
+    public void setJoinDate(String joinDate) {
         this.joinDate = joinDate;
     }
 

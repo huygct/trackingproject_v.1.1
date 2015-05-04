@@ -26,6 +26,7 @@
 
         <!-- Edit Mode Template -->
         <tr ng-switch-when="edit">
+            <input type="hidden" ng-model="user.id" />
             <td>
                 <input type="text" class="form-control" ng-model="user.name" />
             </td>
@@ -42,6 +43,7 @@
 
         <!-- Deleted Mode Template -->
         <tr class="danger" ng-switch-when="deleted">
+            <input type="hidden" ng-model="user.id" />
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
             <td>
@@ -54,6 +56,7 @@
 
         <!-- Normal Mode Template -->
         <tr ng-switch-default>
+            <input type="hidden" value="{{user.id}}" />
             <td>{{user.name}} </td>
             <td>{{user.email}}</td>
             <td>
@@ -68,6 +71,7 @@
         <!-- New User Form -->
         <tbody>
         <tr>
+            <input type="hidden" ng-model="user.id" />
             <td>
                 <input type="text" class="form-control" ng-model="newUser.name" />
             </td>

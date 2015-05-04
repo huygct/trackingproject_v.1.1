@@ -30,7 +30,7 @@ function homeController($scope, $http) {
 
     $scope.viewAllUserProfile = function(){
         $http.get('userProfileList').success(function(response){
-            $scope.addressBooks = response;
+            $scope.userProfiles = response;
         })
     }
 

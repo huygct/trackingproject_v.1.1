@@ -13,6 +13,21 @@
     <div id="fui-button" class="pbl"></div>
 
     <div class="demo-row">
+
+        <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="userProfile == null">
+            No user profile entry found
+        </div>
+        <table class="table table-bordered table-striped" ng-show="userProfile != null">
+            <tr>
+                <th>Badge Id</th>
+                <th>{{userProfile.badgeId}}</th>
+            </tr>
+                <%--<tr ng-repeat="addressBook in addressBooks | filter:searchAddressBook">--%>
+                    <%--<td  style="width:70px;text-align:center;"><button class="btn btn-mini btn-danger" ng-click="deleteAddressBook(addressBooks.indexOf(addressBook))">Delete</button></td>--%>
+                    <button class="btn btn-mini btn-danger" ng-click="editUserProfile(userProfile)">Update</button>
+                <%--</tr>--%>
+        </table>
+
         <div class="demo-title">
             User Profile
         </div>
@@ -74,28 +89,6 @@
             </div>
             <hr />
 
-            <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="addressBooks.length == 0">
-                No address book entry found
-            </div>
-            <table class="table table-bordered table-striped" ng-show="addressBooks.length > 0">
-                <thead>
-                <tr>
-                    <th style="text-align: center; width: 25px;">Delete</th>
-                    <th style="text-align: center; width: 25px;">Update</th>
-                    <th style="text-align: center;"><a href="" ng-click="reverse=!reverse;order('firstName', reverse)">First Name</a></th>
-                    <th style="text-align: center;"><a href="" ng-click="reverse=!reverse;order('lastName', reverse)">Last Name</a></th>
-                    <th style="text-align: center;"><a href="" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
-                    <th style="text-align: center;"><a href="" ng-click="reverse=!reverse;order('email', reverse)">Email</a></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="addressBook in addressBooks | filter:searchAddressBook">
-                    <td  style="width:70px;text-align:center;"><button class="btn btn-mini btn-danger" ng-click="deleteAddressBook(addressBooks.indexOf(addressBook))">Delete</button></td>
-                    <td  style="width:70px;text-align:center;"><button class="btn btn-mini btn-danger" ng-click="editAddressBook(addressBooks.indexOf(addressBook), addressBook)">Update</button></td>
-                    <td>{{addressBook.firstName}}</td><td>{{addressBook.lastName}}</td><td>{{addressBook.phone}}</td><td>{{addressBook.email}}</td>
-                </tr>
-                </tbody>
-            </table>
             <button class="btn btn-danger"  ng-show="addressBooks.length >= 1" ng-click="deleteAllAddressBook()">Delete All Address Book</button>
         </div> <!-- /.demo-content -->
     </div> <!-- /.demo-row -->

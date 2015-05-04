@@ -47,15 +47,20 @@ public class UserController {
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public String addUser(@RequestBody String newUser) {
-        // System.out.println(newUser);
         try {
             JSONObject userJSON = new JSONObject(newUser);
             User user = new User();
+            int id = Integer.parseInt(userJSON.getString("id"));
+            if(id != 0) {
+                user.setId(id);
+            }
             user.setEmail(userJSON.getString("email"));
             user.setName(userJSON.getString("name"));
             user.setEnabled("YES");
             user.setPassword("123");
             user.setRole(Role.ROLE_USER);
+
+//            System.out.println(user.getId());
             User check = userService.save(user);
         } catch (JSONException e) {
             e.printStackTrace();

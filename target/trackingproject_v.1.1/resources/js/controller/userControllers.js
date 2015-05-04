@@ -6,11 +6,14 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     $scope.users = [];
     $scope.newUser = {};
 
+    load();
     // Use $http service to load the data
-    $http.get('userList').success(function(userList){
-        $scope.users = userList;
-        _setIndexes();
-    });
+    function load() {
+        $http.get('userList').success(function(userList){
+            $scope.users = userList;
+            _setIndexes();
+        });
+    };
 
     $scope.addUser = function() {
 
@@ -22,7 +25,7 @@ userController.controller('userController', ['$scope', '$http', function($scope,
 
         $http.post('addUser', newUser)
             .success(function(data, status, headers, config) {
-                $scope.users.push(newUser);
+                load();
         })
         $scope.newUser = {};
     };
@@ -31,8 +34,7 @@ userController.controller('userController', ['$scope', '$http', function($scope,
         if (user.state == "deleted") {
             $http.delete ('deleteUser/' + user.id)
                 .success(function (response) {
-                    $scope.users.splice(user.index, 1);
-                    _setIndexes();
+                    load();
             })
         } else {
             user.state = "deleted";
@@ -46,17 +48,21 @@ userController.controller('userController', ['$scope', '$http', function($scope,
     $scope.editUser = function(user) {
         user.name = user.name;
         user.email = user.email;
+
         user.state = "edit";
     };
 
     $scope.saveUser = function(user) {
         // Probably have some Ajax post or patch request
+        $http.post('addUser', user)
+            .success(function(data, status, headers, config) {
+                load();
+            })
         user.state = "normal";
     };
 
     $scope.cancelEdit = function(user) {
-        user.name = user.name;
-        user.address = user.email;
+        load();
         user.state = "normal";
     };
 
@@ -67,33 +73,4 @@ userController.controller('userController', ['$scope', '$http', function($scope,
 //            console.log(index);
         });
     }
-
-/*
-    //
-    $scope.users = [];
-    $scope.fetchUserList = function () {
-        $http.get('userList').success(function (userList) {
-            $scope.users = userList;
-//                            console.log(userList);
-        });
-    };
-
-    $scope.addNewCar = function (newCar) {
-        $http.post('cars/addCar/' + newCar).success(function () {
-            $scope.fetchUserList();
-        });
-        $scope.carName = '';
-    };
-
-    $scope.removeUser = function () {
-        console.log("aaaaaaaaaaaaaaa")
-        $http.delete('removeUser').success(function () {
-            $scope.fetchUserList();
-        });
-
-    };
-
-    $scope.fetchUserList();
-*/
-
 }]);

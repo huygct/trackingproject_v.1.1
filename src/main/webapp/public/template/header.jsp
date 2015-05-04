@@ -24,6 +24,24 @@
                             <p><spring:message code="header.user"/></p>
                         </a>
                     </li>
+                    <li ng-class="{'gray': activeURL == 'course', '': activeURL != 'course'}">
+                        <a title='<spring:message code="header.course"/>'
+                           href="<c:url value='/protected/course'/>">
+                            <p><spring:message code="header.course"/></p>
+                        </a>
+                    </li>
+                    <li ng-class="{'gray': activeURL == 'team', '': activeURL != 'team'}">
+                        <a title='<spring:message code="header.team"/>'
+                           href="<c:url value='/protected/team'/>">
+                            <p><spring:message code="header.team"/></p>
+                        </a>
+                    </li>
+                    <li ng-class="{'gray': activeURL == 'report', '': activeURL != 'report'}">
+                        <a title='<spring:message code="header.report"/>'
+                           href="<c:url value='/protected/report'/>">
+                            <p><spring:message code="header.report"/></p>
+                        </a>
+                    </li>
                 </ul>
                 <ul class="nav pull-right">
                     <li><a href="<c:url value='/logout' />" title='<spring:message code="header.logout"/>'><p class="displayInLine"><spring:message code="header.logout"/>&nbsp;(${user.name})</p></a></li>
