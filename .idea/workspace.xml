@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d7b2ecb-2ba0-4e4e-bb94-27141fc7186b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/protected/user/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/protected/user/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trackingproject_v.1.1.iws" />
@@ -79,21 +78,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="userControllers.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="userControllers.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.44103774" vertical-offset="0" max-vertical-offset="1411">
-                  <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+                  <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="home.jsp" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-15.038462" vertical-offset="51" max-vertical-offset="2414">
-                  <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+                <state vertical-scroll-proportion="0.789864" vertical-offset="1146" max-vertical-offset="3808">
+                  <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -102,8 +101,8 @@
           <file leaf-file-name="homeControllers.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-22.607143" vertical-offset="540" max-vertical-offset="1717">
-                  <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+                <state vertical-scroll-proportion="-12.892858" vertical-offset="132" max-vertical-offset="1717">
+                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -180,8 +179,8 @@
           <file leaf-file-name="UserProfile.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/tma/gbst/model/UserProfile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6142191" vertical-offset="119" max-vertical-offset="2975">
-                  <caret line="39" column="31" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.5547786" vertical-offset="119" max-vertical-offset="2975">
+                  <caret line="36" column="32" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -249,10 +248,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tma/gbst/service/UserProfileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tma/gbst/repository/UserProfileRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tma/gbst/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/protected/user/user.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" />
       </list>
     </option>
   </component>
@@ -1331,12 +1330,12 @@
       <workItem from="1429776884401" duration="4945000" />
       <workItem from="1429785478931" duration="29381000" />
       <workItem from="1430380680712" duration="24956000" />
-      <workItem from="1430706724211" duration="17308000" />
+      <workItem from="1430706724211" duration="19724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151120000" />
+    <option name="totallyTimeSpent" value="153536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1660,7 +1659,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1670,10 +1669,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
+            <element signature="e#750#751#0" expanded="false" />
+            <element signature="e#821#822#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1718,8 +1717,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="false" />
+            <element signature="e#524#525#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1748,14 +1747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tma/gbst/model/UserProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6142191" vertical-offset="119" max-vertical-offset="2975">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tma/gbst/repository/UserProfileRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -1773,14 +1764,6 @@
             <element signature="e#1549#1599#0" expanded="false" />
             <element signature="e#3535#3583#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="51" max-vertical-offset="2414">
-          <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1808,14 +1791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.607143" vertical-offset="540" max-vertical-offset="1717">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/user/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.23077" vertical-offset="793" max-vertical-offset="1615">
@@ -1826,8 +1801,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44103774" vertical-offset="0" max-vertical-offset="1411">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858" vertical-offset="132" max-vertical-offset="1717">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tma/gbst/model/UserProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5547786" vertical-offset="119" max-vertical-offset="2975">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.789864" vertical-offset="1146" max-vertical-offset="3808">
+          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
           <folding />
         </state>
       </provider>

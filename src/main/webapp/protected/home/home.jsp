@@ -22,11 +22,93 @@
                 <th>Badge Id</th>
                 <th>{{userProfile.badgeId}}</th>
             </tr>
-                <%--<tr ng-repeat="addressBook in addressBooks | filter:searchAddressBook">--%>
-                    <%--<td  style="width:70px;text-align:center;"><button class="btn btn-mini btn-danger" ng-click="deleteAddressBook(addressBooks.indexOf(addressBook))">Delete</button></td>--%>
-                    <button class="btn btn-mini btn-danger" ng-click="editUserProfile(userProfile)">Update</button>
-                <%--</tr>--%>
+            <tr>
+                <th>Badge Id Of Mentor</th>
+                <th>{{userProfile.badgeIdMentor}}</th>
+            </tr>
+            <tr>
+                <th>School</th>
+                <th>{{userProfile.school}}</th>
+            </tr>
+            <tr>
+                <th>Degree</th>
+                <th>{{userProfile.degree}}</th>
+            </tr>
+            <tr>
+                <th>Graduate Date</th>
+                <th>{{userProfile.graduateDate}}</th>
+            </tr>
+            <tr>
+                <th>Final Study Result</th>
+                <th>{{userProfile.finalStudyResult}}</th>
+            </tr>
+            <tr>
+                <th>Toeic</th>
+                <th>{{userProfile.toeic}}</th>
+            </tr>
+            <tr>
+                <th>Join Date</th>
+                <th>{{userProfile.joinDate}}</th>
+            </tr>
+            <tr>
+                <th>Work Role</th>
+                <th>{{userProfile.workRole}}</th>
+            </tr>
+            <tr>
+                <th>Experience Years</th>
+                <th>{{userProfile.experienceYears}}</th>
+            </tr>
+            <tr>
+                <th>Experience Years In Current Role</th>
+                <th>{{userProfile.experienceYearsInCurrentRole}}</th>
+            </tr>
+            <tr>
+                <th>Professional Certification</th>
+                <th>{{userProfile.professionalCertification}}</th>
+            </tr>
+            <tr>
+                <th>Oversea Working Experience</th>
+                <th>{{userProfile.overseaWorkingExperience}}</th>
+            </tr>
+            <tr>
+                <th>Police Clearance Status</th>
+                <th>{{userProfile.policeClearanceStatus}}</th>
+            </tr>
+            <tr>
+                <th>CV</th>
+                <th>{{userProfile.cvUrl}}</th>
+            </tr>
+            <tr>
+                <th>Image User</th>
+                <th>{{userProfile.imageUser}}</th>
+            </tr>
+            <tr>
+                <th>CV</th>
+                <th>{{userProfile.place}}</th>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <th>{{userProfile.gender}}</th>
+            </tr>
+            <tr>
+                <th>Need Tracking</th>
+                <th>{{userProfile.needTracking}}</th>
+            </tr>
+            <tr>
+                <th>Skype Id</th>
+                <th>{{userProfile.skypeId}}</th>
+            </tr>
+            <tr>
+                <th>Ip Address</th>
+                <th>{{userProfile.ipAddress}}</th>
+            </tr>
+            <tr>
+                <th>General Status</th>
+                <th>{{userProfile.generalStatus}}</th>
+            </tr>
         </table>
+
+        <button class="btn btn-mini btn-danger" ng-click="editUserProfile(userProfile)">Update</button>
 
         <div class="demo-title">
             User Profile

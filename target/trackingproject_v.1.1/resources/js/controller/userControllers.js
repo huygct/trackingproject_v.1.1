@@ -20,6 +20,7 @@ userController.controller('userController', ['$scope', '$http', function($scope,
         // Note: $scope.newUser is set through two-way data binding with
         // the new user form in the view
         var newUser = $scope.newUser;
+        newUser.id = 0;
         newUser.state = "normal";
         newUser.index = $scope.users.length;
 
