@@ -36,8 +36,8 @@ public class UserProfile {
     private String ipAddress;
     private String generalStatus;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_USER", referencedColumnName = "id", insertable = false, updatable = false)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_USER", referencedColumnName = "id")
     private User user;
 
 //    public UserProfile() {
@@ -250,5 +250,43 @@ public class UserProfile {
 
     public void setGeneralStatus(String generalStatus) {
         this.generalStatus = generalStatus;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "id=" + id +
+                ", badgeId=" + badgeId +
+                ", badgeIdMentor=" + badgeIdMentor +
+                ", school='" + school + '\'' +
+                ", degree='" + degree + '\'' +
+                ", graduateDate='" + graduateDate + '\'' +
+                ", finalStudyResult=" + finalStudyResult +
+                ", toeic=" + toeic +
+                ", joinDate='" + joinDate + '\'' +
+                ", workRole='" + workRole + '\'' +
+                ", experienceYears=" + experienceYears +
+                ", experienceYearsInCurrentRole=" + experienceYearsInCurrentRole +
+                ", professionalCertification=" + professionalCertification +
+                ", overseaWorkingExperience=" + overseaWorkingExperience +
+                ", policeClearanceStatus='" + policeClearanceStatus + '\'' +
+                ", cvUrl='" + cvUrl + '\'' +
+                ", imageUser='" + imageUser + '\'' +
+                ", place='" + place + '\'' +
+                ", gender=" + gender +
+                ", needTracking=" + needTracking +
+                ", skypeId='" + skypeId + '\'' +
+                ", ipAddress='" + ipAddress + '\'' +
+                ", generalStatus='" + generalStatus + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
