@@ -11,6 +11,6 @@ import java.util.List;
  */
 @NoRepositoryBean
 public interface MyBaseRepository<T, ID extends Serializable> extends CrudRepository<T, ID> {
-    T findByEmail(String email);
+
     List<T> findAll();
 }
