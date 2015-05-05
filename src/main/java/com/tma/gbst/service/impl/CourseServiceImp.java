@@ -28,7 +28,7 @@ public class CourseServiceImp implements CourseService {
     }
 
     @Override
-    public void delete(Course course) {
-        courseRepository.delete(course);
+    public void delete(Integer id) {
+        courseRepository.delete(courseRepository.findOne(id));
     }
 }
