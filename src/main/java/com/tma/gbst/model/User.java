@@ -21,7 +21,7 @@ public class User {
     @Column(name = "user_role")
     private Role role;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private UserProfile userProfile;
     @ManyToMany(mappedBy = "users")
     private Set<Course> courses = new HashSet<Course>();
