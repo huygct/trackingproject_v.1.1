@@ -41,29 +41,7 @@ function homeController($scope, $http) {
     }
 
     $scope.resetUserProfile = function(){
-//        $scope.ab.id = 0;
-//        $scope.ab.badgeId = 0;
-//        $scope.ab.badgeIdMentor = 0;
-//        $scope.ab.school = "";
-//        $scope.ab.degree = "";
-//        $scope.ab.graduateDate = "";
-//        $scope.ab.finalStudyResult = 0;
-//        $scope.ab.toeic = 0;
-//        $scope.ab.joinDate = "";
-//        $scope.ab.workRole = "";
-//        $scope.ab.experienceYears = 0;
-//        $scope.ab.experienceYearsInCurrentRole = 0;
-//        $scope.ab.professionalCertification = false;
-//        $scope.ab.overseaWorkingExperience = false;
-//        $scope.ab.policeClearanceStatus = "";
-//        $scope.ab.cvUrl = "";
-//        $scope.ab.imageUser = "";
-//        $scope.ab.place = "";
-//        $scope.ab.gender = false;
-//        $scope.ab.needTracking = true;
-//        $scope.ab.skypeId = "";
-//        $scope.ab.ipAddress = "";
-//        $scope.ab.generalStatus = "";
+        $scope.viewUserProfile();
         $scope.ab = "";
         $scope.editMode = false;
     }
@@ -78,9 +56,10 @@ function homeController($scope, $http) {
     }
 
     $scope.updateUserProfile = function(ab) {
-        $http.put('updateUserProfile'+$scope.position, ab).success(function(response){
-            $scope.ab = "";
+        $http.post('updateUserProfile', ab).success(function(response){
             $scope.viewUserProfile();
+            $scope.ab = "";
+
             $scope.editMode = false;
         }).error(function(response){
             console.log(response);

@@ -1,5 +1,6 @@
 package com.tma.gbst.service;
 
+import com.tma.gbst.model.Role;
 import com.tma.gbst.model.User;
 import com.tma.gbst.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,9 @@ public class UserService {
 
     public void delete(int userId ) {
         userRepository.delete(userRepository.findOne(userId));
+    }
+
+    public List<User> findByRole(Role role) {
+        return userRepository.findByRole(role);
     }
 }

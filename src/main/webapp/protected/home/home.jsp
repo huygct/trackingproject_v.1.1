@@ -85,7 +85,7 @@
                     <th>{{userProfile.imageUser}}</th>
                 </tr>
                 <tr>
-                    <th>CV</th>
+                    <th>Place</th>
                     <th>{{userProfile.place}}</th>
                 </tr>
                 <tr>
@@ -115,7 +115,7 @@
         <hr>
         <div class="demo-content" ng-show="editMode || userProfile == ''">
             <div class="row">
-                <form ng-submit="addUserProfile(ab)">
+                <form ng-submit="updateUserProfile(ab.$valid)" name="myForm" novalidate>
                     <div class="col-lg-8">
                         <table class="table table-bordered table-striped" >
                             <input type="hidden" ng-model="ab.id" />
@@ -137,7 +137,7 @@
                             </tr>
                             <tr>
                                 <th>Graduate Date</th>
-                                <th><input class="form-control" placeholder="Enter Graduate Date" type="text" ng-model="ab.graduateDate" value="2007-09-23 10:10:10.0" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Graduate Date" type="text" ng-model="ab.graduateDate" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Final Study Result</th>
@@ -149,11 +149,11 @@
                             </tr>
                             <tr>
                                 <th>Join Date</th>
-                                <th><input class="form-control" placeholder="Enter Join Date" type="text" ng-model="ab.joinDate" value="2007-09-23 10:10:10.0" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Join Date" type="text" ng-model="ab.joinDate" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Work Role</th>
-                                <th><input class="form-control" placeholder="Enter Work Role" type="text" ng-model="ab.workRole" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Work Role" type="text" ng-model="ab.workRole" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Experience Years</th>
@@ -173,23 +173,26 @@
                             </tr>
                             <tr>
                                 <th>Police Clearance Status</th>
-                                <th><input class="form-control" placeholder="Enter Police Clearance Status" type="text" ng-model="ab.policeClearanceStatus" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Police Clearance Status" type="text" ng-model="ab.policeClearanceStatus" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>CV</th>
-                                <th><input class="form-control" placeholder="Enter cv Url" type="text" ng-model="ab.cvUrl" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter cv Url" type="text" ng-model="ab.cvUrl" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Image User</th>
-                                <th><input class="form-control" placeholder="Enter Image User" type="text" ng-model="ab.imageUser" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Image User" type="text" ng-model="ab.imageUser" value="" required min="1" /></th>
                             </tr>
                             <tr>
-                                <th>CV</th>
-                                <th><input class="form-control" placeholder="Enter Place" type="text" ng-model="ab.place" required min="1" /></th>
+                                <th>Place</th>
+                                <th><input class="form-control" placeholder="Enter Place" type="text" ng-model="ab.place" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Gender</th>
-                                <th><input class="form-control" placeholder="Enter gender" type="checkbox" ng-model="ab.gender" value="false" required min="1" /></th>
+                                <th>
+                                    <input type="radio" ng-model="ab.gender" value="true" />male
+                                    <input type="radio" ng-model="ab.gender" value="false" />female<br />
+                                </th>
                             </tr>
                             <tr>
                                 <th>Need Tracking</th>
@@ -197,21 +200,22 @@
                             </tr>
                             <tr>
                                 <th>Skype Id</th>
-                                <th><input class="form-control" placeholder="Enter Skype Id" type="text" ng-model="ab.skypeId" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Skype Id" type="text" ng-model="ab.skypeId" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>Ip Address</th>
-                                <th><input class="form-control" placeholder="Enter Ip Address" type="text" ng-model="ab.ipAddress" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter Ip Address" type="text" ng-model="ab.ipAddress" value="" required min="1" /></th>
                             </tr>
                             <tr>
                                 <th>General Status</th>
-                                <th><input class="form-control" placeholder="Enter General Status" type="text" ng-model="ab.generalStatus" required min="1" /></th>
+                                <th><input class="form-control" placeholder="Enter General Status" type="text" ng-model="ab.generalStatus" value="" required min="1" /></th>
                             </tr>
                         </table>
+                        <button type="submit" class="btn btn-primary" ng-disabled="myForm.ab.generalStatus.$dirty && myForm.ab.generalStatus.$invalid">Update</button>
                     </div>
                 </form>
 
-                <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="addUserProfile(ab)">Update</button>
+                <%--<button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="updateUserProfile(ab)">Update</button>--%>
                 <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="!editMode"ng-click="addUserProfile(ab)">Add User Profile</button>
                 <button type="btn btn-primary" class="btn btn-primary" ng-click="resetUserProfile()" ng-show="editMode">Back</button>
             </div>

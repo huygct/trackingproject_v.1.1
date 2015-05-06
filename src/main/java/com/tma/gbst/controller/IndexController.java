@@ -39,8 +39,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/userProfile", method = RequestMethod.GET)
-    public @ResponseBody String userProfileWithID_User(HttpServletRequest request) throws JSONException {
-        HttpSession  session = request.getSession();
+    public @ResponseBody String userProfileWithID_User(HttpSession session) throws JSONException {
         User user = (User) session.getAttribute("user");
         UserProfile userProfile = user.getUserProfile();
 
@@ -60,7 +59,7 @@ public class IndexController {
             userJSON.put("workRole", userProfile.getWorkRole());
             userJSON.put("experienceYears", userProfile.getExperienceYears());
             userJSON.put("experienceYearsInCurrentRole", userProfile.getExperienceYearsInCurrentRole());
-            userJSON.put("professionalCertification", userProfile.getPoliceClearanceStatus());
+            userJSON.put("professionalCertification", userProfile.isProfessionalCertification());
             userJSON.put("overseaWorkingExperience", userProfile.isOverseaWorkingExperience());
             userJSON.put("policeClearanceStatus", userProfile.getPoliceClearanceStatus());
             userJSON.put("cvUrl", userProfile.getCvUrl());
@@ -92,11 +91,51 @@ public class IndexController {
     @RequestMapping(value = "/addUserProfile", method = RequestMethod.POST)
     public @ResponseBody void addUserProfile(@RequestBody UserProfile newUserProfile, HttpSession session) {
         User user = (User) session.getAttribute("user");
+        newUserProfile.setId(user.getId());
         newUserProfile.setUser(user);
 
         userProfileService.save(newUserProfile);
 
         user.setUserProfile(newUserProfile);
+        session.setAttribute("user", user);
+    }
+
+    @RequestMapping(value = "/updateUserProfile", method = RequestMethod.POST)
+    public @ResponseBody void updateUserProfile(@RequestBody String newUserProfile, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        UserProfile userProfile = user.getUserProfile();
+
+        try {
+            JSONObject userJSON = new JSONObject(newUserProfile);
+
+            userProfile.setBadgeId(Integer.parseInt(userJSON.getString("badgeId")));
+            userProfile.setBadgeIdMentor(Integer.parseInt(userJSON.getString("badgeIdMentor")));
+            userProfile.setSchool(userJSON.getString("school"));
+            userProfile.setDegree(userJSON.getString("degree"));
+            userProfile.setGraduateDate(userJSON.getString("graduateDate"));
+            userProfile.setFinalStudyResult(Double.valueOf(userJSON.getString("finalStudyResult")));
+            userProfile.setToeic(Integer.valueOf(userJSON.getString("toeic")));
+            userProfile.setJoinDate(userJSON.getString("joinDate"));
+            userProfile.setWorkRole(userJSON.getString("workRole"));
+            userProfile.setExperienceYears(Double.valueOf(userJSON.getString("experienceYears")));
+            userProfile.setExperienceYearsInCurrentRole(Double.valueOf(userJSON.getString("experienceYearsInCurrentRole")));
+            userProfile.setProfessionalCertification(Boolean.valueOf(userJSON.getString("professionalCertification")));
+            userProfile.setOverseaWorkingExperience(Boolean.valueOf(userJSON.getString("overseaWorkingExperience")));
+            userProfile.setPoliceClearanceStatus(userJSON.getString("policeClearanceStatus"));
+            userProfile.setCvUrl(userJSON.getString("cvUrl"));
+            userProfile.setImageUser(userJSON.getString("imageUser"));
+            userProfile.setPlace(userJSON.getString("place"));
+            userProfile.setGender(Boolean.valueOf(userJSON.getString("gender")));
+            userProfile.setNeedTracking(Boolean.valueOf(userJSON.getString("needTracking")));
+            userProfile.setSkypeId(userJSON.getString("skypeId"));
+            userProfile.setIpAddress(userJSON.getString("ipAddress"));
+            userProfile.setGeneralStatus(userJSON.getString("generalStatus"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        userProfileService.save(userProfile);
+
+        user.setUserProfile(userProfile);
         session.setAttribute("user", user);
     }
 

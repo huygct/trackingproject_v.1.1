@@ -1,7 +1,7 @@
 /**
  * Created by thuynghi on 4/22/2015.
  */
-userDirective.directive("userAdd", function () {
+directive.directive("userAdd", function () {
     return {
         restrict: 'E',
         templateUrl: "user-add.html"
