@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d7b2ecb-2ba0-4e4e-bb94-27141fc7186b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/reportController.js" />
       <change type="DELETED" beforePath="D:\GBST Pool\trackingproject_v.1.1\.idea\description.html" afterPath="" />
       <change type="DELETED" beforePath="D:\GBST Pool\trackingproject_v.1.1\.idea\project-template.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/controller/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/controller/ReportController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/controller/ReportController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/model/UserProfile.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/model/UserProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/tma/gbst/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tma/gbst/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/app/app.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/homeControllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/protected/report/report.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/protected/report/report.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/controller/userControllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/directives/userDirectives.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/directives/userDirectives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trackingproject_v.1.1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -177,7 +164,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6860025" vertical-offset="3077" max-vertical-offset="4624">
-              <caret line="213" column="141" selection-start-line="213" selection-start-column="141" selection-end-line="213" selection-end-column="141" />
+              <caret line="213" column="84" selection-start-line="213" selection-start-column="84" selection-end-line="213" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -1244,12 +1231,12 @@
       <workItem from="1430794211765" duration="12000" />
       <workItem from="1430794267233" duration="48000" />
       <workItem from="1430794340011" duration="15913000" />
-      <workItem from="1430878858797" duration="21193000" />
+      <workItem from="1430878858797" duration="21399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192816000" />
+    <option name="totallyTimeSpent" value="193022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="0" />
@@ -1718,7 +1705,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6860025" vertical-offset="3077" max-vertical-offset="4624">
-          <caret line="213" column="141" selection-start-line="213" selection-start-column="141" selection-end-line="213" selection-end-column="141" />
+          <caret line="213" column="84" selection-start-line="213" selection-start-column="84" selection-end-line="213" selection-end-column="84" />
           <folding />
         </state>
       </provider>

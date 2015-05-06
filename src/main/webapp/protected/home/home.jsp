@@ -211,7 +211,7 @@
                                 <th><input class="form-control" placeholder="Enter General Status" type="text" ng-model="ab.generalStatus" value="" required min="1" /></th>
                             </tr>
                         </table>
-                        <button type="submit" class="btn btn-primary" ng-disabled="myForm.ab.generalStatus.$dirty && myForm.ab.generalStatus.$invalid">Update</button>
+                        <button type="submit" class="btn btn-primary" ng-disabled="!ab.generalStatus">Update</button>
                     </div>
                 </form>
 
