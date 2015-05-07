@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,7 +37,8 @@ public class ReportController {
     @RequestMapping(value = "/viewInformation", method = RequestMethod.GET)
     public @ResponseBody String processUsers (HttpSession session) throws JSONException {
         List<User> userList = userService.findByRole(Role.ROLE_USER);
-
+        // year experience
+        int yearExperiences[] = {0, 0, 0, 0, 0, 0};
         JSONObject json = new JSONObject();
 
         int numberSize = userList.size();
@@ -60,6 +62,19 @@ public class ReportController {
                 } else {
                     numberFemale++;
                 }
+                if(userProfile.getExperienceYears() > 5) {
+                    yearExperiences[5]++;
+                } else if(userProfile.getExperienceYears() >3) {
+                    yearExperiences[4]++;
+                } else if(userProfile.getExperienceYears() > 2) {
+                    yearExperiences[3]++;
+                } else if(userProfile.getExperienceYears() > 1) {
+                    yearExperiences[2]++;
+                } else if(userProfile.getExperienceYears() > 0.5) {
+                    yearExperiences[1]++;
+                } else {
+                    yearExperiences[0]++;
+                }
             }
         }
 
@@ -68,8 +83,10 @@ public class ReportController {
         json.put("out", numberOut);
         json.put("male", numberMale);
         json.put("female", numberFemale);
-
-        System.out.println(userList);
+        for (int i = 0; i < 6; i++) {
+            json.put("yearExperiences_" + i, yearExperiences[i]);
+        }
+//        System.out.println(userList);
         return json.toString();
     }
 }
