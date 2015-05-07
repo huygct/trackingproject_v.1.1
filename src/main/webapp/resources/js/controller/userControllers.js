@@ -1,7 +1,7 @@
 /**
  * Created by Nghi Tran on 4/22/2015.
  */
-controller.controller('userController', ['$scope', '$http', function($scope, $http){
+controllers.controller('userController', ['$scope', '$http', function($scope, $http){
     // Models (i.e. data)
     $scope.users = [];
     $scope.newUser = {};

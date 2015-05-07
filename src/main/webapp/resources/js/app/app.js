@@ -6,6 +6,6 @@ var trackingApp = angular.module('trackingApp', [
     'appControllers'
 ]);
 
+
 var directive = angular.module('appDirectives', []);
-var controller = angular.module('appControllers', []);
-//var homeController = angular.mudule('appControllers', []);
+var controllers = angular.module('appControllers', []);
