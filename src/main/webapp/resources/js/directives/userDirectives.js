@@ -1,21 +1,21 @@
 /**
  * Created by thuynghi on 4/22/2015.
  */
-directive.directive("userAdd", function () {
+directives.directive("userAdd", function () {
     return {
         restrict: 'E',
         templateUrl: "user-add.html"
     };
 });
 
-userDirective.directive("userList", function () {
+directives.directive("userList", function () {
     return {
         restrict: "A",
         templateUrl: "user-list.html"
     };
 });
 
-userDirective.directive("userTabs", function () {
+directives.directive("userTabs", function () {
     return {
         restrict: "E",
         templateUrl: "user-tabs.html",
