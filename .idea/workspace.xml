@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d7b2ecb-2ba0-4e4e-bb94-27141fc7186b" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\GBST Pool\trackingproject_v.1.1\.idea\description.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\GBST Pool\trackingproject_v.1.1\.idea\project-template.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trackingproject_v.1.1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -163,8 +161,8 @@
       <file leaf-file-name="home.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6860025" vertical-offset="3077" max-vertical-offset="4624">
-              <caret line="213" column="84" selection-start-line="213" selection-start-column="84" selection-end-line="213" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.36443883" vertical-offset="2975" max-vertical-offset="4624">
+              <caret line="192" column="90" selection-start-line="192" selection-start-column="90" selection-end-line="192" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -297,7 +295,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
+    <option name="width" value="1046" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -1231,15 +1229,15 @@
       <workItem from="1430794211765" duration="12000" />
       <workItem from="1430794267233" duration="48000" />
       <workItem from="1430794340011" duration="15913000" />
-      <workItem from="1430878858797" duration="21399000" />
+      <workItem from="1430878858797" duration="22954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193022000" />
+    <option name="totallyTimeSpent" value="194577000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="0" y="0" width="1046" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
@@ -1264,7 +1262,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25426438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32222223" sideWeight="0.49943376" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30831644" sideWeight="0.49943376" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23329559" sideWeight="0.4992" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38777778" sideWeight="0.50056624" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1704,8 +1702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/protected/home/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6860025" vertical-offset="3077" max-vertical-offset="4624">
-          <caret line="213" column="84" selection-start-line="213" selection-start-column="84" selection-end-line="213" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.36443883" vertical-offset="2975" max-vertical-offset="4624">
+          <caret line="192" column="90" selection-start-line="192" selection-start-column="90" selection-end-line="192" selection-end-column="90" />
           <folding />
         </state>
       </provider>

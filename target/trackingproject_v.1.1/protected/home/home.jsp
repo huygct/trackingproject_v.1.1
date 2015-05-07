@@ -115,7 +115,7 @@
         <hr>
         <div class="demo-content" ng-show="editMode || userProfile == ''">
             <div class="row">
-                <form ng-submit="addUserProfile(ab)">
+                <form ng-submit="updateUserProfile(ab.$valid)" name="myForm" novalidate>
                     <div class="col-lg-8">
                         <table class="table table-bordered table-striped" >
                             <input type="hidden" ng-model="ab.id" />
@@ -189,7 +189,10 @@
                             </tr>
                             <tr>
                                 <th>Gender</th>
-                                <th><input class="form-control" placeholder="Enter gender" type="checkbox" ng-model="ab.gender" value="false" required min="1" /></th>
+                                <th>
+                                    <input type="radio" ng-model="ab.gender" value="true" />male
+                                    <input type="radio" ng-model="ab.gender" value="false" />female<br />
+                                </th>
                             </tr>
                             <tr>
                                 <th>Need Tracking</th>
@@ -208,10 +211,11 @@
                                 <th><input class="form-control" placeholder="Enter General Status" type="text" ng-model="ab.generalStatus" value="" required min="1" /></th>
                             </tr>
                         </table>
+                        <button type="submit" class="btn btn-primary" ng-disabled="!ab.generalStatus">Update</button>
                     </div>
                 </form>
 
-                <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="updateUserProfile(ab)">Update</button>
+                <%--<button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="updateUserProfile(ab)">Update</button>--%>
                 <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="!editMode"ng-click="addUserProfile(ab)">Add User Profile</button>
                 <button type="btn btn-primary" class="btn btn-primary" ng-click="resetUserProfile()" ng-show="editMode">Back</button>
             </div>
