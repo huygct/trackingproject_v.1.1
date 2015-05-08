@@ -9,9 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -24,15 +22,15 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/protected/report")
 public class ReportController {
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView welcome () {
-        return new ModelAndView("report");
-    }
-
     @Autowired
     UserService userService;
     @Autowired
     UserProfileService userProfileService;
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView welcome () {
+        return new ModelAndView("report");
+    }
 
     @RequestMapping(value = "/viewInformation", method = RequestMethod.GET)
     public @ResponseBody String processUsers (HttpSession session) throws JSONException {
@@ -89,4 +87,39 @@ public class ReportController {
 //        System.out.println(userList);
         return json.toString();
     }
+
+    @RequestMapping(value = "/getInformationByMonth", params = {"month", "year"})
+    public @ResponseBody String getInformationByMonth (@RequestParam("month") String month, @RequestParam("year") String year) throws JSONException {
+
+        String searchData = year + "-" + month;
+        List<User> userList = userService.findByRole(Role.ROLE_USER);
+
+        JSONObject json = new JSONObject();
+        int inByMonth = 0;
+        int numberMaleByMonth = 0;
+        int numberFemaleByMonth = 0;
+        int outByMonth = 0;
+        for (int i = 0; i < userList.size(); i++) {
+            UserProfile userProfile = userList.get(i).getUserProfile();
+            if (userProfile.getJoinDate().startsWith(searchData)) {
+                inByMonth++;
+                if (userProfile.isGender()) {
+                    numberMaleByMonth++;
+                } else {
+                    numberFemaleByMonth ++;
+                }
+            }
+        }
+
+        json.put("inByMonth", inByMonth);
+        json.put("outByMonth", outByMonth);
+        json.put("numberMaleByMonth", numberMaleByMonth);
+        json.put("numberFemaleByMonth", numberFemaleByMonth);
+
+        return json.toString();
+
+//        in out male female
+    }
+
+
 }

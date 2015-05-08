@@ -94,24 +94,16 @@
             </thead>
             <tbody>
             <tr>
-                <%--<td>{{information.yearExperiences_0}}</td>--%>
-                <%--<td>{{information.yearExperiences_1}}</td>--%>
-                <%--<td>{{information.yearExperiences_2}}</td>--%>
-                <%--<td>{{information.yearExperiences_3}}</td>--%>
-                <%--<td>{{information.yearExperiences_4}}</td>--%>
-                <%--<td>{{information.yearExperiences_5}}</td>--%>
+                <td>{{information.size}}</td>
+                <td>{{informationByMonth.inByMonth}}</td>
+                <td>{{informationByMonth.outByMonth}}</td>
+                <td>{{informationByMonth.numberMaleByMonth}}</td>
+                <td>{{informationByMonth.numberFemaleByMonth}}</td>
             </tr>
             </tbody>
         </table>
     </div>
-    {{date.choiceMonth}}
-    {{date.choiceYear}}
 
-
-    <div ng-controller="reportController">
-        {{information}}
-
-    </div>
 </div>
 
 

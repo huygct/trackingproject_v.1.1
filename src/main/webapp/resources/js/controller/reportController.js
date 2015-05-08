@@ -17,17 +17,15 @@ function reportController($scope, $http) {
     $scope.viewInformation();
 
     $scope.options = {
-        years: [2014, 2015, 2016],
-        months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        years: ["2014", "2015", "2016"],
+        months: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     };
 
     $scope.viewInformationByMonth = function () {
-        $scope.date.choiceMonth = "Nghi";
-        $scope.date.choiceYear = "Hehe";
         // Remember write controller for it
-        $http.post('getInformationByMonth', date).success(function (response) {
-            $scope.informationByMonth = response;
-            $scope.date = "";
+        $http.get('getInformationByMonth', {params: {month: $scope.date.choiceMonth, year: $scope.date.choiceYear}})
+            .success(function (response) {
+                $scope.informationByMonth = response;
         }).error(function (response) {
             console.log(response);
         })

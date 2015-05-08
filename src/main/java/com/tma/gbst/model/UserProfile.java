@@ -35,7 +35,7 @@ public class UserProfile {
     private String ipAddress;
     private String generalStatus;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_USER", referencedColumnName = "id")
     private User user;
 

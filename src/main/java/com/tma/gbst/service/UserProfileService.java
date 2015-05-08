@@ -31,4 +31,8 @@ public class UserProfileService {
     public void delete(int id ) {
         userProfileRepository.delete(userProfileRepository.findOne(id));
     }
+
+    public List<UserProfile> findByJoinDateStartingWith(String findByMonthAndYear) {
+        return userProfileRepository.findByJoinDateStartingWith(findByMonthAndYear);
+    }
 }

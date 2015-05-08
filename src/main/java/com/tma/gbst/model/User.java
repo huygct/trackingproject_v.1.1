@@ -15,13 +15,14 @@ public class User {
     private String email;
     private String name;
     private String enabled;
+    private String outDate;
     private String password;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "user_role")
     private Role role;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private UserProfile userProfile;
     @ManyToMany(mappedBy = "users")
     private Set<Course> courses = new HashSet<Course>();
@@ -100,6 +101,14 @@ public class User {
 
     public void setEnabled(String enabled) {
         this.enabled = enabled;
+    }
+
+    public String getOutDate() {
+        return outDate;
+    }
+
+    public void setOutDate(String outDate) {
+        this.outDate = outDate;
     }
 
     public UserProfile getUserProfile() {
