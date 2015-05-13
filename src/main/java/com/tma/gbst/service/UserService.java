@@ -4,6 +4,7 @@ import com.tma.gbst.model.Role;
 import com.tma.gbst.model.User;
 import com.tma.gbst.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,10 +23,12 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    @Secured("ROLE_ADMIN")
     public User save (User user) {
         return userRepository.save(user);
     }
 
+    @Secured("ROLE_ADMIN")
     public void delete(int userId ) {
         userRepository.delete(userRepository.findOne(userId));
     }

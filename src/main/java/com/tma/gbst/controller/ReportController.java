@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,10 +36,11 @@ public class ReportController {
     }
 
     @RequestMapping(value = "/viewInformation", method = RequestMethod.GET)
-    public @ResponseBody String processUsers (HttpSession session) throws JSONException {
+    public @ResponseBody String processUsers (HttpSession session) {
         List<User> userList = userService.findByRole(Role.ROLE_USER);
         // year experience
         int yearExperiences[] = {0, 0, 0, 0, 0, 0};
+        int readiness[] = {0, 0, 0, 0, 0, 0};
         JSONObject json = new JSONObject();
 
         int numberSize = userList.size();
@@ -60,15 +64,44 @@ public class ReportController {
                 } else {
                     numberFemale++;
                 }
-                if(userProfile.getExperienceYears() > 5) {
+
+                Date date = new Date();
+                float timeToNow = 0;
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                try {
+                    Date joinDate = format.parse(userProfile.getJoinDate());
+                    timeToNow = ((float)date.getTime() - (float)joinDate.getTime()) / (float)31536000000L;
+
+                    // readiness
+                    float timeCalculateByDay = ((float)date.getTime() - (float)joinDate.getTime()) / (float)86400000;
+                    if (timeCalculateByDay > 180 || timeCalculateByDay < 0) {
+                        readiness[5]++;
+                    } else if (timeCalculateByDay > 90) {
+                        readiness[4]++;
+                    } else if (timeCalculateByDay > 30) {
+                        readiness[3]++;
+                    } else if (timeCalculateByDay > 14) {
+                        readiness[2]++;
+                    } else if (timeCalculateByDay > 7) {
+                        readiness[1]++;
+                    } else if (timeCalculateByDay >= 0) {
+                        readiness[0]++;
+                    }
+                    //----------------------------------------------------------------------
+                    // System.out.println(date.getTime() - joinDate.getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                if((float)userProfile.getExperienceYears()+timeToNow > 5) {
                     yearExperiences[5]++;
-                } else if(userProfile.getExperienceYears() >3) {
+                } else if((float)userProfile.getExperienceYears()+timeToNow >3) {
                     yearExperiences[4]++;
-                } else if(userProfile.getExperienceYears() > 2) {
+                } else if((float)userProfile.getExperienceYears()+timeToNow > 2) {
                     yearExperiences[3]++;
-                } else if(userProfile.getExperienceYears() > 1) {
+                } else if((float)userProfile.getExperienceYears()+timeToNow > 1) {
                     yearExperiences[2]++;
-                } else if(userProfile.getExperienceYears() > 0.5) {
+                } else if((float)userProfile.getExperienceYears()+timeToNow > 0.5) {
                     yearExperiences[1]++;
                 } else {
                     yearExperiences[0]++;
@@ -76,20 +109,28 @@ public class ReportController {
             }
         }
 
-        json.put("size", numberSize);
-        json.put("in", numberIn);
-        json.put("out", numberOut);
-        json.put("male", numberMale);
-        json.put("female", numberFemale);
-        for (int i = 0; i < 6; i++) {
-            json.put("yearExperiences_" + i, yearExperiences[i]);
+        try {
+            json.put("size", numberSize);
+            json.put("in", numberIn);
+            json.put("out", numberOut);
+            json.put("male", numberMale);
+            json.put("female", numberFemale);
+            for (int i = 0; i < 6; i++) {
+                json.put("yearExperiences_" + i, yearExperiences[i]);
+            }
+            for (int i = 0; i < 6; i++) {
+                json.put("readiness_" + i, readiness[i]);
+            }
+
+            return json.toString();
+        } catch (JSONException e) {
+            return "";
         }
-//        System.out.println(userList);
-        return json.toString();
+
     }
 
     @RequestMapping(value = "/getInformationByMonth", params = {"month", "year"})
-    public @ResponseBody String getInformationByMonth (@RequestParam("month") String month, @RequestParam("year") String year) throws JSONException {
+    public @ResponseBody String getInformationByMonth (@RequestParam("month") String month, @RequestParam("year") String year) {
 
         String searchData = year + "-" + month;
         List<User> userList = userService.findByRole(Role.ROLE_USER);
@@ -101,24 +142,28 @@ public class ReportController {
         int outByMonth = 0;
         for (int i = 0; i < userList.size(); i++) {
             UserProfile userProfile = userList.get(i).getUserProfile();
-            if (userProfile.getJoinDate().startsWith(searchData)) {
-                inByMonth++;
-                if (userProfile.isGender()) {
-                    numberMaleByMonth++;
-                } else {
-                    numberFemaleByMonth ++;
+            if (userProfile != null ) {
+                if (userProfile.getJoinDate().startsWith(searchData)) {
+                    inByMonth++;
+                    if (userProfile.isGender()) {
+                        numberMaleByMonth++;
+                    } else {
+                        numberFemaleByMonth++;
+                    }
                 }
             }
         }
 
-        json.put("inByMonth", inByMonth);
-        json.put("outByMonth", outByMonth);
-        json.put("numberMaleByMonth", numberMaleByMonth);
-        json.put("numberFemaleByMonth", numberFemaleByMonth);
+        try {
+            json.put("inByMonth", inByMonth);
+            json.put("outByMonth", outByMonth);
+            json.put("numberMaleByMonth", numberMaleByMonth);
+            json.put("numberFemaleByMonth", numberFemaleByMonth);
 
-        return json.toString();
-
-//        in out male female
+            return json.toString();
+        } catch (JSONException e) {
+            return "";
+        }
     }
 
 

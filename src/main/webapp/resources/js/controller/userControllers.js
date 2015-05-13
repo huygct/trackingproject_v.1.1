@@ -27,7 +27,7 @@ controllers.controller('userController', ['$scope', '$http', function($scope, $h
         $http.post('addUser', newUser)
             .success(function(data, status, headers, config) {
                 load();
-        })
+        });
         $scope.newUser = {};
     };
 
@@ -47,9 +47,6 @@ controllers.controller('userController', ['$scope', '$http', function($scope, $h
     };
 
     $scope.editUser = function(user) {
-        user.name = user.name;
-        user.email = user.email;
-
         user.state = "edit";
     };
 
@@ -58,7 +55,7 @@ controllers.controller('userController', ['$scope', '$http', function($scope, $h
         $http.post('addUser', user)
             .success(function(data, status, headers, config) {
                 load();
-            })
+            });
         user.state = "normal";
     };
 

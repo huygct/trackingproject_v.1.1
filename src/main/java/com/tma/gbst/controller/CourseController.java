@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Created by thuynghi on 5/4/2015.
+ * Created by Nghi Tran on 5/4/2015.
  */
 @Controller
 @RequestMapping(value = "/protected/course")
@@ -24,10 +24,8 @@ public class CourseController {
         return new ModelAndView("course");
     }
 
-    @RequestMapping(value = "/courseList", method = RequestMethod.GET, headers = "Accept=application/json")
-    public
-    @ResponseBody
-    String listCourses() {
+    @RequestMapping(value = "/courseList", method = RequestMethod.GET)
+    public @ResponseBody String listCourses() {
         JSONArray courseArray = new JSONArray();
         for (Course course : courseService.findAll()) {
             JSONObject courseJson = new JSONObject();
@@ -60,7 +58,7 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/deleteCourse/{courseId}", method = RequestMethod.DELETE)
-    public void deleteCourse(@PathVariable("courseId") Integer courseId) {
+    public @ResponseBody void deleteCourse(@PathVariable("courseId") Integer courseId) {
         courseService.delete(courseId);
     }
 }

@@ -72,13 +72,46 @@
         <center>Experience chart</center>
     </div>
 
+    <!-- Experience-------------------------------------------->
+    <h2 class="sub-header">Readiness</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><1 Week</th>
+                <th>1 - 2 weeks </th>
+                <th>2 weeks - 1 months</th>
+                <th>1 - 3 months</th>
+                <th>3 - 6 months</th>
+                <th>Unknown</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{information.readiness_0}}</td>
+                <td>{{information.readiness_1}}</td>
+                <td>{{information.readiness_2}}</td>
+                <td>{{information.readiness_3}}</td>
+                <td>{{information.readiness_4}}</td>
+                <td>{{information.readiness_5}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- pie chart canvas element : readiness -->
+    <div>
+        <center><canvas id="readiness" width="600" height="200"></canvas></center>
+        <center>Readiness chart</center>
+    </div>
+
     <!-- Month report-------------------------------------------->
     <h2 class="sub-header">Monthly Report</h2>
     <div class="col-xs-6">
         Month:
-        <select class="form-control" ng-model="date.choiceMonth" ng-options="opt for opt in options.months"></select>
+        <select class="form-control nomargin" ng-model="date.choiceMonth" ng-options="opt for opt in options.months"></select>
         Year:
-        <select class="form-control" ng-model="date.choiceYear" ng-options="opt for opt in options.years"></select>
+        <select class="form-control nomargin" ng-model="date.choiceYear" ng-options="opt for opt in options.years"></select>
         <button type="btn btn-primary" class="btn btn-primary" ng-click="viewInformationByMonth()">View</button>
     </div>
     <div class="table-responsive">
@@ -107,7 +140,7 @@
 </div>
 
 
-
+<link href="<c:url value='/resources/css/sample.css'  />" rel="stylesheet"/>
 <script src="<c:url value="/resources/js/controller/reportController.js" />"></script>
 <script src="<c:url value="/resources/chart/Chart.js" />"></script>
 <script src="<c:url value="/resources/chart/Chart.min.js" />"></script>
